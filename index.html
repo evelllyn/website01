@@ -17,7 +17,6 @@
 
     /*導覽列格式*/
     .header{
-      background-color: transparent;
       width: auto;
       height: 100px;
       background-image: url(https://cdn.pixabay.com/photo/2021/07/23/09/32/bread-6486963_960_720.jpg);
@@ -37,19 +36,39 @@
       /*變block型態但又可以inline*/
       display: inline-block;
       padding: 10px;
-      /* 變化的時間拉長 */
-      transition: .4s;
     }
     .header a:hover{
       background-color: #8d7c756d;
-      padding: 10px 20px;
     }
     nav{
       /* 靠右邊排 */
       text-align: right;
-      /*或是w100% 要把nav撐開*/
-      flex-grow: 1;
-      padding: 5px 30px;
+      display: flex;
+      /*或是flex-grow: 1; 要把nav撐開*/
+      width: 100%;
+      padding: 5px 0 5px 230px;
+    }
+    /* 主選單 */
+    nav ul li{
+      list-style: none;
+    }
+    /* 子選單 */
+    .branch {
+      background-color: #24292F;
+      padding: 0 4.5px;
+      font-size: small;
+      font-weight: lighter;
+      display: none;
+      list-style: none;
+    }
+    nav ul li:hover .branch{
+      display: block;
+      position: absolute;
+      z-index: 1;
+    }
+    .branch a:hover{
+      background-color: transparent;
+      color: #bbbac1;
     }
     .nav span{
       font-size: 30px;
@@ -159,6 +178,10 @@
       font-weight: bold;
       display: none;
     }
+    .text:hover{
+      color: #ffffff;
+      transform: scale(1.2);
+    }
 
     /* 門市 */
     .storeBg{
@@ -185,10 +208,11 @@
       color: #111111;
       flex: 1 1 auto;
       margin: 0 40px;
-      padding: 10px 5px;
+      padding: 10px 9px;
     }
     .storelist a:hover{
-      transform: scale(1.2);
+      background-color: #8d7c7522;
+      border-radius: 10px;
     }
 
     /* 資訊 */
@@ -243,10 +267,47 @@
       <span>27&nbsp;BAKERY</span>
     </nav>
     <nav>
-      <a href="#">所有商品</a>
-      <a href="#">門市據點</a>
-      <a href="#">關於我們</a>
-      <a href="#">聯絡我們</a>
+      <ul>
+        <li><a href="#">全店活動</a>
+          <ul class="branch">
+            <li><a href="#">最新活動</a></li>
+            <li><a href="#">重要公告</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="#">所有商品</a>
+          <ul class="branch">
+            <li><a href="#">歐式麵包</a></li>
+            <li><a href="#">日式麵包</a></li>
+            <li><a href="#">台式麵包</a></li>
+            <li><a href="#">吐司</a></li>
+            <li><a href="#">蛋糕</a></li>
+            <li><a href="#">餅乾</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="#">門市據點</a>
+          <ul class="branch">
+            <li><a href="#">北部地區</a></li>
+            <li><a href="#">中部地區</a></li>
+            <li><a href="#">南部地區</a></li>
+            <li><a href="#">東部地區</a></li>
+            <li><a href="#">離島地區</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li><a href="#">關於我們</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">聯絡我們</a>
+          <ul class="branch">
+            <li><a href="#">夥伴招募</a></li>
+          </ul>
+        </li>
+      </ul>
     </nav>
   </div>
 
@@ -290,27 +351,27 @@
     <div class="layout" id="card">
       <div class="card">
         <img src="https://cdn.pixabay.com/photo/2014/07/22/09/59/  bread-399286_960_720.jpg" alt="card-pic">
-        <h6 class="text">歐式麵包</h6>
+        <a href="#"><h6 class="text">歐式麵包</h6></a>
       </div>
       <div class="card">
         <img src="https://cdn.pixabay.com/photo/2019/03/10/16/22/  bread-4046506_960_720.jpg" alt="card-pic">
-        <h6 class="text">日式麵包</h6>
+        <a href="#"><h6 class="text">日式麵包</h6></a>
       </div>
       <div class="card">
         <img src="https://cdn.pixabay.com/photo/2016/03/27/21/59/  bread-1284438_960_720.jpg" alt="card-pic">
-        <h6 class="text">台式麵包</h6>
+        <a href="#"><h6 class="text">台式麵包</h6></a>
       </div>
       <div class="card">
         <img src="https://cdn.pixabay.com/photo/2021/04/18/10/44/  bread-6187939_960_720.jpg" alt="card-pic">
-        <h6 class="text" style="left:38%">吐司</h6>
+        <a href="#"><h6 class="text" style="left:38%">吐司</h6></a>
       </div>
       <div class="card">
         <img src="https://cdn.pixabay.com/photo/2020/12/07/06/20/  cake-5810624_960_720.jpg" alt="card-pic">
-        <h6 class="text" style="left:38%">蛋糕</h6>
+        <a href="#"><h6 class="text" style="left:38%">蛋糕</h6></a>
       </div>
       <div class="card">
         <img src="https://cdn.pixabay.com/photo/2018/12/14/14/59/  cookie-3875208_960_720.jpg" alt="card-pic">
-        <h6 class="text" style="left:38%">餅乾</h6>
+        <a href="#"><h6 class="text" style="left:38%">餅乾</h6></a>
       </div>
     </div>
   </div>
